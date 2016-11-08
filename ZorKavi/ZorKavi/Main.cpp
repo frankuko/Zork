@@ -8,6 +8,8 @@ int main()
 
 	getchar();
 
-	Entity c = new Entity("a", "b", NULL);
+	Entity *c = new Entity("a", "b", NULL);
 	
+	getchar();
+
 }

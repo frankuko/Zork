@@ -12,7 +12,7 @@ class Entity
 
 	public:
 			//Methods
-		Entity(char * n, char * d, Entity* p);
+			Entity(const char * , const char * , Entity* );
 			virtual ~Entity();
 			virtual void Look();
 			virtual void Update();

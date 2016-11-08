@@ -4,11 +4,9 @@
 using namespace std;
 
 
-	Entity::Entity(char * n, char * d, Entity * p = NULL) 
+	Entity::Entity(const char * name, const char * description, Entity * parent = NULL) :
+		name(name),desc(description),parent(parent)
 	{
-		name = n;
-		desc = d;
-		parent = p;
 
 		if (parent != NULL)
 			//entities.push_back(parent);
