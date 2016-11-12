@@ -19,7 +19,7 @@ class Entity
 
 			//Members
 			std::string name;
-			std::string desc;
+			std::string description;
 
 
 			//Point to parent

@@ -2,8 +2,9 @@
 #define __CREATURE_H_
 
 #include <string>
-#include "Entity.h"
 #include <vector>
+#include "Entity.h"
+
 
 using namespace std;
 

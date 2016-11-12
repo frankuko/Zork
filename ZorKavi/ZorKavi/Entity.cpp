@@ -5,7 +5,7 @@ using namespace std;
 
 
 	Entity::Entity(const char * name, const char * description, Entity * parent = NULL) :
-		name(name),desc(description),parent(parent)
+		name(name),description(description),parent(parent)
 	{
 
 		if (parent != NULL)
@@ -18,7 +18,7 @@ using namespace std;
 	{
 	
 		cout << name << endl;
-		cout << desc << endl;
+		cout << description << endl;
 	
 	
 	}

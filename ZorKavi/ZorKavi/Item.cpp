@@ -16,3 +16,8 @@
 
 
 	}
+
+	int Item::GetValue() const
+	{
+
+	}
