@@ -19,5 +19,5 @@
 
 	int Item::GetValue() const
 	{
-
+		return 0;
 	}

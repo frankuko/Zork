@@ -15,7 +15,7 @@ class World
 			World();
 			~World();
 
-			bool Command(vector<string>& args)
+			bool Command(vector<string>&);
 			void Gameloop();
 
 

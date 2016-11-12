@@ -13,10 +13,11 @@ class Item;
 
 class Room : public Entity
 {
-	Room(const char*, const char*);
-	~Room();
+	public:
+			Room(const char*, const char*);
+			~Room();
 
-	void Look() const;
+			void Look() const;
 
 
 
