@@ -15,7 +15,22 @@ Player::~Player()
 
 }
 
-void Player::Look() const
+void Player::Look(const vector<string> & args) const
+{
+
+}
+
+void Player::Inventory() const
+{
+
+}
+
+bool Player::Go(const vector<string> & args)
+{
+
+}
+
+bool Player::Take(const vector<string> & args)
 {
 
 }

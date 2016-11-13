@@ -12,7 +12,11 @@ class Player : public Creature
 	Player(char*, char*, Room*);
 	~Player();
 
-	void Look() const;
+	void Look(const vector<string> & ) const;
+	void Inventory() const;
+	bool Go(const vector<string> & );
+	bool Take(const vector<string> &);
+
 
 
 
