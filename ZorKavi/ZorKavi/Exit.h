@@ -1,8 +1,11 @@
 #ifndef __EXIT_H_
 #define __EXIT_H_
 
+#include <iostream>
 #include "Entity.h"
 #include "Room.h"
+
+using namespace std;
 
 class Exit : public Entity
 {

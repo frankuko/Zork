@@ -1,9 +1,9 @@
 #include "Item.h"
 
-	Item::Item(const char * name, const char * descrption, Entity * parent, ItemType type, ItemRarity rarity) :
-		Entity(name, descrption,parent), type(type), rarity(rarity)
+	Item::Item(char * name, char * descrption, Entity * parent, ItemType item_type, ItemRarity rarity) :
+		Entity(name, descrption,parent), item_type(item_type), rarity(rarity)
 	{
-		//definir tipo
+		type = ITEM;
 	}
 
 	Item::~Item()

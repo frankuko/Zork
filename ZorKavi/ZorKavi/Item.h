@@ -23,14 +23,15 @@ enum ItemRarity
 
 class Item : public Entity
 {
-	Item(const char*, const char*, Entity* parent, ItemType = COMMON, ItemRarity = STANDARD);
-	~Item();
+	public:
+		Item(char*, char*, Entity* parent, ItemType = COMMON, ItemRarity = STANDARD);
+		~Item();
 
-	void Look() const;
-	int GetValue() const;
+		void Look() const;
+		int GetValue() const;
 
-	ItemType type;
-	ItemRarity rarity;
+		ItemType item_type;
+		ItemRarity rarity;
 
 
 };

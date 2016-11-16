@@ -14,7 +14,7 @@ class Item;
 class Room : public Entity
 {
 	public:
-			Room(const char*, const char*);
+			Room(char*, char*);
 			~Room();
 
 			void Look() const;

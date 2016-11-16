@@ -5,7 +5,8 @@
 Creature::Creature(char * name, char * description, Room* room ):
 	Entity(name, description,(Entity*)room)
 {
-	//TODO DEFINIR TIPO CREATURE
+	
+	type = CREATURE;
 
 }
 

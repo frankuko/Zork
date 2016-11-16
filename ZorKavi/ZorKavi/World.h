@@ -3,6 +3,7 @@
 
 #include <string>
 #include <list>
+#include <vector>
 
 using namespace std;
 
@@ -17,6 +18,9 @@ class World
 
 			bool Command(vector<string>&);
 			void Gameloop();
+
+			list<Entity*> entities;
+			Player* player;
 
 
 };

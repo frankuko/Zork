@@ -3,10 +3,11 @@
 #include "Room.h"
 
 
-Room::Room(const char* name, const char* description):
+Room::Room(char* name, char* description):
 Entity(name,description,NULL)
 {
-	//TODO TIPO ROOM
+	type = ROOM;
+
 }
 
 Room::~Room() 

@@ -4,9 +4,11 @@
 using namespace std;
 
 
-	Entity::Entity(const char * name, const char * description, Entity * parent = NULL) :
+	Entity::Entity( char * name,  char * description, Entity * parent = NULL) :
 		name(name),description(description),parent(parent)
 	{
+
+		type = ENTITY;
 
 		if (parent != NULL)
 			//entities.push_back(parent);
@@ -17,8 +19,8 @@ using namespace std;
 	void Entity::Look()
 	{
 	
-		cout << name << endl;
-		cout << description << endl;
+		cout << "\t" << name << endl;
+		cout << "\t\t" << description << endl;
 	
 	
 	}
@@ -26,5 +28,45 @@ using namespace std;
 	Entity::~Entity() {}
 
 	void Entity::Update() {}
+
+
+	/*
+		Find one ocurrence in the list
+	*/
+	bool Entity::Find(Entity * entity) const
+	{
+		//TODO CBEGIN Y CEND?
+		for (list<Entity*>::const_iterator it = entities.begin(); it != entities.end(); ++it)
+		{
+			if (entity == (*it))
+				return true;
+		}
+
+		return false;
+	}
+
+	Entity* Entity::Find(EntityType type) const
+	{
+		for (list<Entity*>::const_iterator it = entities.begin(); it != entities.end(); ++it)
+		{
+			if ((*it)->type == type)
+				return (*it);
+		}
+
+		return NULL;
+
+	}
+
+
+
+	void Entity::FindAll(EntityType type, list<Entity*>& my_list) const
+	{
+
+		for (list<Entity*>::const_iterator it = entities.begin(); it != entities.end(); ++it)
+		{
+			if ((*it)->type == type)
+				my_list.push_back(*it);
+		}
+	}
 
 
