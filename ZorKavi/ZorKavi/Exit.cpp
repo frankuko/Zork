@@ -1,8 +1,8 @@
 #include "Exit.h"
 
-Exit::Exit(char * name, char * description, Room * origin, Room * destination, Direction direction) :
+Exit::Exit(char * name, char * description, Room * origin, Room * destination, Direction direction, bool locked) :
 	Entity(name, description, (Entity*) origin),
-	closed(false),locked(false),destination(destination),direction(direction)
+	closed(false),locked(locked),destination(destination),direction(direction)
 {
 	type = EXIT;
 
@@ -64,10 +64,23 @@ void Exit::ChangeDirection()
 void Exit::Look() const
 {
 	
-
 	cout << "NAME: " << name << endl;
+	cout << "LOCKED: " << locked << endl;
 	cout << "DIRECTION: " << GetDirection() << endl;
 	cout << "DESCRIPTION: " << description << endl;
+
+}
+
+void Exit::Unlock()
+{
+	if (locked == false)
+		return;
+
+	if (locked == true)
+	{
+		locked = false;
+		cout << "UNLOCKED: " << name << endl;
+	}
 
 }
 

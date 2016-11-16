@@ -9,8 +9,8 @@ class Room;
 enum ItemType 
 {
 	COMMON,
-	WEAPON,
-	ARMOUR
+	KEY,
+	BLOCK
 
 };
 
@@ -24,11 +24,12 @@ enum ItemRarity
 class Item : public Entity
 {
 	public:
-		Item(char*, char*, Entity* parent, ItemType = COMMON, ItemRarity = STANDARD);
+		Item(char*, char*, Entity* parent, char* = "",ItemType = COMMON, ItemRarity = STANDARD);
 		~Item();
 
 		//void Look() const;
-		int GetValue() const;
+		string value;
+		string GetValue() const;
 
 		ItemType item_type;
 		ItemRarity rarity;

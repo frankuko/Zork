@@ -20,7 +20,7 @@ enum Direction
 class Exit : public Entity
 {
 	public:
-			Exit(char * , char *, Room * , Room * ,Direction);
+			Exit(char * , char *, Room * , Room * ,Direction,bool);
 			~Exit();
 			void Look() const;
 			string GetDirection() const;
@@ -33,10 +33,12 @@ class Exit : public Entity
 
 			//Only room destination, origin will be the parent
 			Room * destination;
-
+			
 
 			//Initial Direction of the exit
 			Direction direction;
+
+			void Unlock();
 
 
 };

@@ -19,6 +19,7 @@ class Player : public Creature
 			bool Go(const vector<string> & );
 			bool Take(const vector<string> &);
 			bool Drop(const vector<string> &);
+			bool Use(const vector<string> &);
 
 
 

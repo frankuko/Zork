@@ -50,7 +50,7 @@ void Player::Inventory() const
 		return;
 	}
 
-	for (list<Entity*>::const_iterator it = items.begin(); it != items.cend(); ++it)
+	for (list<Entity*>::const_iterator it = items.begin(); it != items.end(); ++it)
 	{
 
 		(*it)->Look();
@@ -108,6 +108,12 @@ bool Player::Take(const vector<string> & args)
 			return false;
 		}
 
+		if (item->rarity == EPIC)
+		{
+			cout << "\nYou can't take this item.\n";
+			return false;
+		}
+
 		cout << "\nYou take " << item->name << ".\n";
 		item->ChangeParent(this);
 
@@ -132,6 +138,83 @@ bool Player::Drop(const vector<string> & args)
 
 		cout << "\nYou drop " << item->name << "...\n";
 		item->ChangeParent(parent);
+
+		return true;
+	}
+
+	return false;
+}
+
+void Tokenize(const string& str, vector<string>& tokens, const string& delimiters = " ")
+{
+	// Skip delimiters at beginning.
+	string::size_type lastPos = str.find_first_not_of(delimiters, 0);
+	// Find first "non-delimiter".
+	string::size_type pos = str.find_first_of(delimiters, lastPos);
+
+	while (string::npos != pos || string::npos != lastPos)
+	{
+		// Found a token, add it to the vector.
+		tokens.push_back(str.substr(lastPos, pos - lastPos));
+		// Skip delimiters.  Note the "not_of"
+		lastPos = str.find_first_not_of(delimiters, pos);
+		// Find next "non-delimiter"
+		pos = str.find_first_of(delimiters, lastPos);
+	}
+
+
+}
+
+bool Player::Use(const vector<string> & args)
+{
+
+	vector<string> objs;
+	Tokenize(args[1], objs);
+
+
+
+	if (objs.size() == 3 && objs[1].compare("on") == 0)
+	{
+		string obj1 = objs[0];
+		Item* item1 = (Item*)Find(obj1, ITEM);
+
+		if (item1 == NULL)
+		{
+			cout << "\nThere is no item on you with that name.\n";
+			return false;
+		}
+
+		string obj2 = objs[2];
+
+		Item* item2 = (Item*)parent->Find(obj2, ITEM);
+		if (item2 == NULL)
+		{
+			cout << "\nThere is nothing with that name to use that object.\n";
+			return false;
+		}
+
+		//abrir puertas cerradas
+
+		if (item1->item_type != KEY)
+			return false;
+
+		if (item2->item_type != BLOCK)
+			return false;
+
+		list<Entity*> exits;
+		parent->FindAll(EXIT, exits);
+
+		cout << item1->GetValue() << endl;
+
+		delete item1;
+
+		for (list<Entity*>::iterator it = exits.begin(); it != exits.end(); ++it)
+		{
+			
+			((Exit*)(*it))->Unlock();
+
+
+		}
 
 		return true;
 	}

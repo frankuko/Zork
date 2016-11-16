@@ -1,9 +1,10 @@
 #include "Item.h"
 
-	Item::Item(char * name, char * descrption, Entity * parent, ItemType item_type, ItemRarity rarity) :
-		Entity(name, descrption,parent), item_type(item_type), rarity(rarity)
+	Item::Item(char * name, char * descrption, Entity * parent, char* action,ItemType item_type, ItemRarity rarity) :
+		Entity(name, descrption,parent), value(action), item_type(item_type), rarity(rarity)
 	{
 		type = ITEM;
+		
 	}
 
 	Item::~Item()
@@ -18,7 +19,7 @@
 
 	}*/
 
-	int Item::GetValue() const
+	string Item::GetValue() const
 	{
-		return 0;
+		return value;
 	}
