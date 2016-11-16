@@ -17,6 +17,7 @@ enum EntityType
 	ITEM
 };
 
+
 class Entity 
 {
 

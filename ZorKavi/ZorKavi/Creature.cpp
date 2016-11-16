@@ -16,10 +16,15 @@ Creature::~Creature()
 }
 
 
-void Creature::Look(const vector<string> & args) const
+/*void Creature::Look(const vector<string> & args) const
 {
-}
+}*/
 
 void Creature::Update()
 {
+}
+
+Room* Creature::ActualRoom() const
+{
+	return (Room*)parent;
 }

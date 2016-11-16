@@ -54,7 +54,7 @@ int main()
 	printf("\nWelcome to ZORK\n");
 	char line[50];
 
-	//getchar();
+
 
 	//Entity *c = new Entity("a", "b", NULL);
 	World w;
@@ -66,8 +66,10 @@ int main()
 	while (true)
 	{
 		//getchar();
+		
 
 		fgets(line, 50, stdin);
+		system("cls");
 
 		//const char* args = line.c_str();
 		

@@ -16,11 +16,9 @@ public:
 	//Methods
 	Creature(char *, char *, Room*);
 	virtual ~Creature();
-	virtual void Look(const vector<string> & ) const;
+	//virtual void Look(const vector<string> & ) const;
 	virtual void Update();
-
-	//Members
-	Room* actualRoom;
+	Room* ActualRoom() const;
 };
 
 #endif

@@ -5,11 +5,12 @@
 #include <string>
 #include <list>
 #include "Entity.h"
+#include "Exit.h"
 
 using namespace std;
 
 class Item;
-//class exit
+class Exit;
 
 class Room : public Entity
 {
@@ -18,7 +19,7 @@ class Room : public Entity
 			~Room();
 
 			void Look() const;
-
+			Exit* GetExit(const string&) const;
 
 
 };

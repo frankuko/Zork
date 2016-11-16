@@ -50,10 +50,28 @@ void Room::Look() const
 
 		if ((*it)->type == EXIT)
 		{
+
 			Exit* exit = (Exit*)*it;
 			exit->Look();
 		}
 	}
 
 	cout << "-------------------------------" << endl;
+}
+
+
+Exit*  Room::GetExit(const string& direction) const
+{
+	for (list<Entity*>::const_iterator it = entities.begin(); it != entities.end(); ++it)
+	{
+		if ((*it)->type == EXIT)
+		{
+			Exit* ex = (Exit*)*it;
+			if(ex->GetDirection().compare(direction) == 0)
+					return ex;
+		}
+	}
+
+	return NULL;
+
 }

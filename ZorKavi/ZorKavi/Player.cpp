@@ -20,7 +20,7 @@ void Player::Look(const vector<string> & args) const
 	
 	if (args.size() > 1)
 	{
-		for (list<Entity*>::const_iterator it = parent->entities.begin(); it != parent->entities.cend(); ++it)
+		for (list<Entity*>::const_iterator it = parent->entities.begin(); it != parent->entities.end(); ++it)
 		{
 			//look place
 			if ((*it)->name.compare(args[1]) == 0)
@@ -59,9 +59,38 @@ void Player::Inventory() const
 
 }
 
-bool Player::Go(const vector<string> & args)
+bool Player::Go(const vector<string>& args)
 {
-	return false;
+	
+
+	Exit* exit = ActualRoom()->GetExit(args[1]);
+
+	if (exit == NULL)
+	{
+		cout << "\nThere is no exit at '" << args[1] << "'.\n";
+		return false;
+	}
+
+	if (exit->locked)
+	{
+		cout << "\nThat exit is blocked.\n";
+		return false;
+	}
+
+	cout << "\nYou take direction " << exit->GetDirection() << "...\n";
+
+	//ChangeParent(exit->GetDestinationFrom((Room*)parent));
+
+
+
+	//change my parent
+	ChangeParent(exit->destination);
+
+	//change exit parent
+	exit->ChangeDirection();
+	parent->Look();
+
+	return true;
 }
 
 bool Player::Take(const vector<string> & args)
