@@ -11,11 +11,12 @@
 
 	}
 
-	void Item::Look() const
+	/*void Item::Look() const
 	{
+		cout << "\t" << name << endl;
+		cout << "\t\t" << description << endl;
 
-
-	}
+	}*/
 
 	int Item::GetValue() const
 	{

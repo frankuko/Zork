@@ -36,12 +36,12 @@ class Entity
 
 			//Point to parent
 			Entity* parent;
-
+			void ChangeParent(Entity *);
 
 			// list of entities
 			list<Entity*> entities;
 			bool Find(Entity *) const;
-			Entity * Find(EntityType ) const;
+			Entity * Find(string, EntityType ) const;
 			void FindAll(EntityType, list<Entity*> &) const;
 
 			

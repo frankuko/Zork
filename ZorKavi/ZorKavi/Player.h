@@ -18,6 +18,7 @@ class Player : public Creature
 			void Inventory() const;
 			bool Go(const vector<string> & );
 			bool Take(const vector<string> &);
+			bool Drop(const vector<string> &);
 
 
 

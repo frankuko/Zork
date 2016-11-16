@@ -19,8 +19,8 @@ using namespace std;
 	void Entity::Look()
 	{
 	
-		cout << "\t" << name << endl;
-		cout << "\t\t" << description << endl;
+		cout << "NAME: " << name << endl;
+		cout << "DESCRIPTION: " << description << endl;
 	
 	
 	}
@@ -29,6 +29,19 @@ using namespace std;
 
 	void Entity::Update() {}
 
+
+
+
+	void Entity::ChangeParent(Entity* new_parent)
+	{
+		if (parent != NULL)
+			parent->entities.remove(this);
+
+		parent = new_parent;
+
+		if (parent != NULL)
+			parent->entities.push_back(this);
+	}
 
 	/*
 		Find one ocurrence in the list
@@ -45,12 +58,16 @@ using namespace std;
 		return false;
 	}
 
-	Entity* Entity::Find(EntityType type) const
+	Entity* Entity::Find(string name, EntityType type) const
 	{
 		for (list<Entity*>::const_iterator it = entities.begin(); it != entities.end(); ++it)
 		{
 			if ((*it)->type == type)
-				return (*it);
+			{
+				if((*it)->name.compare(name) == 0)
+					return (*it);
+			}
+				
 		}
 
 		return NULL;

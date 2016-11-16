@@ -34,7 +34,8 @@ void Player::Look(const vector<string> & args) const
 	}
 	else
 	{
-		parent->Look();
+		Room * r = ((Room*) (parent));
+		r->Look();
 	}
 }
 
@@ -65,5 +66,47 @@ bool Player::Go(const vector<string> & args)
 
 bool Player::Take(const vector<string> & args)
 {
+
+	if (args.size() == 2)
+	{
+
+
+		Item* item = (Item*)parent->Find(args[1], ITEM);
+
+		if (item == NULL)
+		{
+			cout << "\nThere is no item here with that name.\n";
+			return false;
+		}
+
+		cout << "\nYou take " << item->name << ".\n";
+		item->ChangeParent(this);
+
+	}
+
 	return false;
 }
+
+bool Player::Drop(const vector<string> & args)
+{
+	if (args.size() == 2)
+	{
+
+		
+		Item* item = (Item*)Find(args[1], ITEM);
+
+		if (item == NULL)
+		{
+			cout << "\nThere is no item on you with that name.\n";
+			return false;
+		}
+
+		cout << "\nYou drop " << item->name << "...\n";
+		item->ChangeParent(parent);
+
+		return true;
+	}
+
+	return false;
+}
+

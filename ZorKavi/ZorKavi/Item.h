@@ -27,7 +27,7 @@ class Item : public Entity
 		Item(char*, char*, Entity* parent, ItemType = COMMON, ItemRarity = STANDARD);
 		~Item();
 
-		void Look() const;
+		//void Look() const;
 		int GetValue() const;
 
 		ItemType item_type;

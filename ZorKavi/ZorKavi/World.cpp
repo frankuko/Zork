@@ -90,7 +90,18 @@ bool World::Command(vector<string> & args)
 					player->Look(args);
 					res = true;
 				}
-					
+
+				if (args[0].compare("take") == 0)
+				{
+					player->Take(args);
+					res = true;
+				}
+
+				if (args[0].compare("drop") == 0)
+				{
+					player->Drop(args);
+					res = true;
+				}
 
 			}
 
