@@ -20,6 +20,7 @@ class Player : public Creature
 			bool Take(const vector<string> &);
 			bool Drop(const vector<string> &);
 			bool Use(const vector<string> &);
+			//bool Attack(const vector<string> &);
 
 
 

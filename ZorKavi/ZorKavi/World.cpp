@@ -25,11 +25,11 @@ World::World()
 	//Room in the left (2-2)
 	Room * room22 = new Room("Goblin's Hut", "There is a enormous goblin with a big stick of iron");
 	Creature * creature1 = new Creature("Big Goblin", "A stupid idiot globin.", room22);
-	Item * itemr221 = new Item("Big Stick of Iron", "Is a stick",creature1,"Using the Stick, you move the big rock.",KEY,STANDARD);
+	Item * itemr221 = new Item("Big_Stick_of_Iron", "Is a stick",room22,"Using the Stick, you move the big rock.",KEY,STANDARD);
 
 	//Room in the right (2-3)
 	Room * room23 = new Room("Sacred Room", "In the middle of the room something is glowing, you don't know what to do");
-	Item * itemr231 = new Item("THE KEY", "There's a note with the key: YOU CAN CHOOSE ONLY ONE...",room23, "Using the key, you open the chest.",KEY, STANDARD);
+	Item * itemr231 = new Item("THE_KEY", "There's a note with the key: YOU CAN CHOOSE ONLY ONE...",room23, "Using the key, you open the chest.",KEY, STANDARD);
 
 	//Room in the north, aka Third Room (3-1)
 	Room * room31 = new Room("Dark Room", "You cannot see nothing, but you can notice the presence of something evil");
@@ -38,7 +38,7 @@ World::World()
 	//Fourth Room (4-1)
 	Room * room41 = new Room("Final Room", "There are 3 chests in the middle of the room, they all have a keyhole in it. You can see the exit of the grotto.");
 	Item * itemr411 = new Item("Left chest", "A big chest, looks that is full of coins", room41);
-	Item * itemr412 = new Item("Right chest", "A small chest, looks empty", room41, "",BLOCK, EPIC);
+	Item * itemr412 = new Item("Right_chest", "A small chest, looks empty", room41, "",BLOCK, EPIC);
 
 	entities.push_back(room11);
 	entities.push_back(itemr111);
