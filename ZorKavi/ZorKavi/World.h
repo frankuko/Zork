@@ -19,6 +19,8 @@ class World
 			bool Command(vector<string>&);
 			void Gameloop();
 
+			void Help();
+
 			list<Entity*> entities;
 			Player* player;
 

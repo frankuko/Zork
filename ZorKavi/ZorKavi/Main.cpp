@@ -51,27 +51,28 @@ int main()
 {
 	printf("\nHello World\n\n");
 	printf("\nWelcome to ZORK\n");
+	printf("\nZORK is a videogame in which we play the role of an adventurer through a mysterious grotto.\n");
+	printf("What dangers will stalk our adventurer in his quest for glory?\n\n");
+
+	printf("In this adventure, you have to write the actions that you want the hero to do\n");
+	printf("To view these actions, type help in the prompt and press the enter button:\n");
+
+
 	char line[50];
 
 
-
-	//Entity *c = new Entity("a", "b", NULL);
 	World w;
 
 	vector <string> args;
 	
-	//getchar();
+
 
 	while (true)
 	{
-		//getchar();
-		
 
 		fgets(line, 50, stdin);
 		system("cls");
-
-		//const char* args = line.c_str();
-		
+	
 	
 		Parse(line, args);
 

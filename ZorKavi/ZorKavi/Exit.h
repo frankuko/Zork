@@ -5,7 +5,7 @@
 #include "Entity.h"
 #include "Room.h"
 
-using namespace std;
+//using namespace std;
 
 class Room;
 

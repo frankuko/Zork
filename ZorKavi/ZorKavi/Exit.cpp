@@ -65,9 +65,9 @@ void Exit::Look() const
 {
 	
 	cout << "NAME: " << name << endl;
-	cout << "LOCKED: " << locked << endl;
+	cout << "LOCKED: " << (locked? "YES": "NO") << endl;
 	cout << "DIRECTION: " << GetDirection() << endl;
-	cout << "DESCRIPTION: " << description << endl;
+	cout << "DESCRIPTION: " << description << endl << endl;
 
 }
 

@@ -121,6 +121,12 @@ bool World::Command(vector<string> & args)
 					player->Inventory();
 					res = true;
 				}
+
+				if (args[0].compare("help") == 0)
+				{
+					Help();
+					res = true;
+				}
 			}
 
 			break;
@@ -173,6 +179,19 @@ bool World::Command(vector<string> & args)
 void World::Gameloop() 
 {
 
+}
+
+void World::Help() 
+{
+	printf("The available actions are the following:\n");
+	printf("- look -> Take a look in the actual room. It describes if there are objects that you can take or use and the different exits that there are in the room\n");
+	printf("- inventory -> Describes the objects that you carry on.\n");
+	printf("- look <object> -> Describe that object\n");
+	printf("- take <object> -> Put the object in your inventory\n");
+	printf("- drop <object> -> Drop the object in the middle of the room\n");
+	printf("- use <object1> on <object2> -> Make an action with object1 on object2");
+	printf("- go <direction> -> Try to go to the indicated direction. Available directions are NORTH, SOUTH, EAST, WEST\n");
+	printf("- help -> Show these actions.\n\n");
 }
 
 

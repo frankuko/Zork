@@ -3,6 +3,7 @@
 
 
 #include <string>
+#include <iostream>
 #include "Entity.h"
 class Room;
 
@@ -27,7 +28,7 @@ class Item : public Entity
 		Item(char*, char*, Entity* parent, char* = "",ItemType = COMMON, ItemRarity = STANDARD);
 		~Item();
 
-		//void Look() const;
+		void Look() const;
 		string value;
 		string GetValue() const;
 
